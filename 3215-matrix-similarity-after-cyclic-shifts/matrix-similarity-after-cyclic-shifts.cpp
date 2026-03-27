@@ -26,15 +26,7 @@ public:
                 }
             }
         }
-        for(int i = 0 ; i<mat.size() ; i++)
-        {
-            for( int j = 0 ; j <mat[0].size(); j++)
-            {
-                if(temp[i][j]!=mat[i][j]){
-                    return false;
-                }
-            }
-        }
-        return true;
+        
+        return temp == mat;
     }
 };
