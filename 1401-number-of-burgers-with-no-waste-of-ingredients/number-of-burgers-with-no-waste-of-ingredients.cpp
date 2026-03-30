@@ -6,7 +6,7 @@ public:
         else if(tomatoSlices % 2 == 1)return {};
         else{
             // while(cheeseSlices > 0){
-            //     if((cheeseSlices*4 +(n - cheeseSlices)*2) == tomatoSlices){
+            //     if((cheeseSlices*4 +(n - cheeselices)*2) == tomatoSlices){
             //         return {cheeseSlices , n-cheeseSlices};
             //     }
             //     cheeseSlices--;
