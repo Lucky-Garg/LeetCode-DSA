@@ -9,8 +9,15 @@ public:
             mpp[v].push_back(u);
         }
         int  n  = mpp.size();
-        for(auto it : mpp){
-            if(it.second.size() == n-1)return it.first;
+        vector<int>degree(n+1);
+        for(auto it : edges){
+            int u = it[0];
+            int v = it[1];
+            degree[u]++;
+            degree[v]++;
+        }
+        for(int i = 1 ; i<=n ; i++){
+            if(degree[i] == n-1)return i;
         }
         return -1;
     }
