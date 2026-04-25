@@ -4,8 +4,6 @@ public:
         temp.push_back(s);
         if(s == adj.size()-1){
             ans.push_back(temp);
-            temp.pop_back();
-            return ;
         }
         for(auto it : adj[s]){
             solve(ans , adj , it , temp);
