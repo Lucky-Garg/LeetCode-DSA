@@ -5,8 +5,9 @@ public:
             return false;
         if(arr[i] == 0)
             return true;
+        int jump = arr[i];
         arr[i]*= -1;
-        return (solve(arr , i+arr[i]) || solve(arr , i-arr[i]));
+        return solve(arr , i + jump) || solve( arr , i - jump);
     }
     bool canReach(vector<int>& arr, int start) {
         return solve(arr , start);
