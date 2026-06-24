@@ -17,11 +17,12 @@ public:
             ans += st.top();
             st.pop();
         }
-        int i = 0 , j = ans.size()-1;
-        while(i <= j){
-            swap(ans[i] , ans[j]);
-            i++ , j--;
-        }
+        // int i = 0 , j = ans.size()-1;
+        // while(i <= j){
+        //     swap(ans[i] , ans[j]);
+        //     i++ , j--;
+        // }
+        reverse(ans.begin() , ans.end());
         return ans;
     }
 };
