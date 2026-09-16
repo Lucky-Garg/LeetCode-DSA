@@ -1,20 +1,23 @@
 class Solution {
 public:
     int maximalNetworkRank(int n, vector<vector<int>>& roads) {
-        unordered_map<int , unordered_set<int>>adj;
+        vector<int>deg(n , 0);
+        vector<vector<bool>>list(n , vector<bool>(n , false));
         for(auto it : roads){
-            adj[it[0]].insert(it[1]);
-            adj[it[1]].insert(it[0]);
+            deg[it[0]]++;
+            deg[it[1]]++;
+
+            list[it[0]][it[1]] = true;
+            list[it[1]][it[0]] = true;
         }
         int maxi = -1;
         for(int i = 0 ; i < n ; i++){
-            int lenI = adj[i].size();
             for(int j = i+1 ; j < n ; j++){
-                int lenJ = adj[j].size();
-                if(adj[i].count(j)){
-                    lenJ -= 1;
+                int rank = deg[i]+deg[j];
+                if(list[i][j]){
+                    rank -= 1;
                 }
-                maxi = max(maxi , lenI + lenJ);
+                maxi = max(maxi , rank);
             }   
         }
         return maxi;
