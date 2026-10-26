@@ -1,7 +1,6 @@
 class Solution {
 public:
     int n , m;
-    vector<vector<int>>vis;
     long long dfs(vector<vector<int>>& grid , int i , int j){
         if(i < 0 || i >= n || j < 0 || j>= m || grid[i][j] == 0){
             return 0;
